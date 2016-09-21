@@ -1,4 +1,6 @@
-function todoActions() {
+import {ADD_TODO} from '../constants/index.js';
+
+export function todoActions() {
 	return {
 		addTodo,
 		markAll,

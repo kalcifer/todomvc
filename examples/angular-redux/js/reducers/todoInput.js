@@ -1,4 +1,6 @@
-function todoState(state={todos:[], filterStatus:'', editTodo: null}, action){
+import {ADD_TODO} from '../constants/index.js';
+
+export function todoState(state={todos:[], filterStatus:'', editTodo: null}, action){
 	if(action.type === ADD_TODO){
 		var newState = {
 			todos: state.todos.map(function(item) {return item}).concat({id:1, text: action.value, status: 'active', checked: false}),

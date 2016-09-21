@@ -1,3 +1,5 @@
+import {todoActions} from '../actions/todoInput.js';
+
 angular.module('todomvc')
 	.directive('todo', function todo() {
 		return {

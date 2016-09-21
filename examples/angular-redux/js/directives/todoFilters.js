@@ -6,7 +6,7 @@ angular.module('todomvc')
     controller: filterController,
     scope : {},
     link:function($scope){
-      console.log('Here in todoFilter')
+
     }
   }
 })
