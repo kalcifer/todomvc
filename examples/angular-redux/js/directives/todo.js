@@ -30,7 +30,11 @@ function todoController($ngRedux, $scope) {
 		$scope.removeTodo($scope.todo);
 	}
 	const unsubscribe = $ngRedux.connect(function(state){
-		return {editedTodo: state.todoState.editedTodo};
+		var thisTodo = state.todoState.todos.filter(todo => todo.text === $scope.todo.text)[0];
+		return {
+			editedTodo: state.todoState.editedTodo,
+			checked: thisTodo ? thisTodo.checked: false
+		};
 	}, todoActions())($scope);
 	$scope.$on('$destroy', unsubscribe);
 }
