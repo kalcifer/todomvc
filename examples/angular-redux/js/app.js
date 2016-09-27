@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import thunk from 'redux-thunk';
-import {todoActions} from './actions/todoInput.js';
+import {todoActions} from './actions/todoActions.js';
 import {todoState} from './reducers/todoInput.js';
 import ngRedux from 'ng-redux';
 
@@ -30,6 +30,6 @@ angular.module('todomvc', ['ngRoute', 'ngResource', 'ngRedux'])
 			});
 	}).config(function ($ngReduxProvider) {
 		const rootReducer = combineReducers({todoState});
-    $ngReduxProvider
-      .createStoreWith(rootReducer, [thunk]);
+    	$ngReduxProvider
+      		.createStoreWith(rootReducer, [thunk]);
   }).service('todoActions', todoActions).name

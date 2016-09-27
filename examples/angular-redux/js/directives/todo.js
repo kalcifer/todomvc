@@ -1,4 +1,4 @@
-import {todoActions} from '../actions/todoInput.js';
+import {todoActions} from '../actions/todoActions.js';
 
 angular.module('todomvc')
 	.directive('todo', function todo() {
